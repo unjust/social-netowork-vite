@@ -29,7 +29,7 @@ git commit -m 'deploy'
 echo "hello git"
 
 # si estas desplegando a https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:unjust/social-network-vite.git main:gh-pages
+# git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
 # tambien en vite.config.js agrega el propiedad "base" con el valor de tu <REPO> 
 # https://vitejs.dev/guide/static-deploy.html#github-pages
 
