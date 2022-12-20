@@ -8,7 +8,8 @@ const routes = {
 };
 
 export const navigate = (route) => {
-  routes[route](document.querySelector('main'));
+  debugger
+  routes[route](document.querySelector('main'), navigate);
 };
 
 export const getPath = (path) => {

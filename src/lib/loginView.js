@@ -5,25 +5,25 @@ const template = `<div>
   <form id="loginForm">
     <input type="email" />
     <input type="password" />
-    <button type="submit">Login</button>
+    <button type="submit">Login Button </button>
   </form></div>`;
 
-const addEvents = (rootEl) => {
+const addEvents = (rootEl, onNavigate) => {
   rootEl.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
     const email = rootEl.querySelector('input[type="email"]').value;
     const pass = rootEl.querySelector('input[type="password"]').value;
     signIn(email, pass).then((user) => {
       alert(`Welcome ${user.displayName}`);
-      window.location.hash = '#home';
+      onNavigate('/home');
     }).catch(({ message }) => {
       alert(message);
     });
   });
 };
 
-export const render = (rootEl) => {
+export const render = (rootEl, onNavigate) => {
   rootEl.innerHTML = template;
-  addEvents(rootEl);
+  addEvents(rootEl, onNavigate);
   console.log(template, rootEl);
 };
